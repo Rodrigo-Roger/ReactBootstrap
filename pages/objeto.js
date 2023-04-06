@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
+import { Button, Card, Col, Row } from 'react-bootstrap'
 import Pagina from '../components/Pagina'
 
 const objeto = () => {
@@ -14,17 +14,24 @@ const objeto = () => {
 ] 
 
     return (
-        <Pagina titulo="Objetos">
-            <Container>
+        <Pagina titulo="Carros">
+            <Row md={4}>
                {carros.map(item => (
-                <div>
-                    <h1>{item.marca} - {item.modelo}</h1>
-                    <p>Ano: {item.ano}</p>
-                    <p>Cor: {item.cor}</p>
-                    <img src={item.foto}></img>
-                </div>
-               ))}
-            </Container>
+                
+                <Col>
+                <Card className="mb-3">
+                <Card.Img variant="top" src={item.foto} />
+                <Card.Body>
+                  <Card.Title>{item.marca} - {item.cor}</Card.Title>
+                  <Card.Text>{item.ano}</Card.Text>
+                  <Card.Text>{item.cor}</Card.Text>
+                  <Button variant="primary">Detalhes</Button>
+                </Card.Body>
+              </Card>
+              </Col>
+              
+               ))}</Row>
+            
         </Pagina>
     )
 }
