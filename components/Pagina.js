@@ -8,15 +8,15 @@ const Pagina = (props) => {
   return (
     <>
       <Cabecalho />
-      <div className='bg-body-tertiary py-3 text-black text-rigth mb-3 ' >
-        <Container className='mb-4 pb-4 pt-4  '>
+      <div className='bg-secondary py-3 text-white text-right mb-3'>
+        <Container>
           <h1>{props.titulo}</h1>
-        </Container >
+        </Container>
       </div>
-      <Container>
+    <Container className='mb-5'>
       {props.children}
       </Container>
-      <div style={{ width: '100%' }} className=' bg-secondary position-fixed bottom-0 py-3 text-white text-center'>
+      <div style={{ width: '100%' }} className='bg-secondary position-fixed bottom-0 py-3 text-white text-center'>
         <p>Todos os direitos reservados</p>
       </div>
     </>
