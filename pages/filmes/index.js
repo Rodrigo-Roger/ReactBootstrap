@@ -3,11 +3,11 @@ import Pagina from '../../components/Pagina'
 import apiFilmes from '../../services/apiFilmes'
 
 const index = () => {
-    const[filmes, setFilmes] = useState(['a','b'])
+    const[filmes, setFilmes] = useState([])
 
     useEffect(()=>{
         apiFilmes.get('/movie/popular').then(resultado =>{
-            console.log(resultado.data.results)
+            setFilmes(resultado.data.results)
         })
     }, [])
   return (
@@ -15,7 +15,7 @@ const index = () => {
         <div>a</div>
 
         {filmes.map(item => (
-            <p>{item}</p>
+            <p>{item.title}</p>
         ))}
     </Pagina>
   )
